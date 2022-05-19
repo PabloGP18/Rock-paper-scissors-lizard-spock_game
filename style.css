@@ -47,7 +47,17 @@ Button{
 button{
     cursor: pointer;
 }
-
-
+.optionButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.resetButton{
+    padding-bottom: 40px;
+}
+button.option{
+margin-right: 20px}
 
 
