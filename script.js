@@ -16,10 +16,15 @@ option.forEach((option) => {
         console.log(aiInput)
     // Calling functions in eventlistener
         comparingInput(playerInput,aiInput);
-        leftToPlay();
+        leftToPlay(movesLeft);
+        displayPick(playerInput,aiInput);
     });
 });
 
+function displayPick(playerInput,aiInput){
+    document.getElementById("playerPick").textContent= playerInput;
+    document.getElementById("computerPick").textContent= aiInput;
+}
 function leftToPlay(){
     if (movesLeft <= 0){
         movesLeft = "No more moves left..Restart the game!";
@@ -40,7 +45,7 @@ function comparingInput(playerInput, aiInput) {
         document.getElementById("showResult").innerText= "Tie"
     }
     // checking rock
-    if(playerInput === "Rock"){
+   else if(playerInput === "Rock"){
 
         if(aiInput === "Scissors" || aiInput === "lizard"){
             countPlayer++
@@ -54,7 +59,7 @@ function comparingInput(playerInput, aiInput) {
     }
 
     // checking paper
-    if(playerInput === "Paper"){
+   else if(playerInput === "Paper"){
 
         if(aiInput === "Rock" || aiInput === "Spock"){
             countPlayer++
@@ -68,7 +73,7 @@ function comparingInput(playerInput, aiInput) {
     }
 
     // checking Scissors
-    if(playerInput === "Scissors"){
+    else if(playerInput === "Scissors"){
 
         if(aiInput === "Paper" || aiInput === "Lizard"){
             countPlayer++
@@ -82,7 +87,7 @@ function comparingInput(playerInput, aiInput) {
     }
 
     // checking Lizard
-    if(playerInput === "Lizard"){
+    else if(playerInput === "Lizard"){
 
         if(aiInput === "Spock" || aiInput === "Paper"){
             countPlayer++
@@ -96,7 +101,7 @@ function comparingInput(playerInput, aiInput) {
     }
 
     // checking Spock
-    if(playerInput === "Spock"){
+    else if(playerInput === "Spock"){
 
         if(aiInput === "Scissors" || aiInput === "Rock"){
             countPlayer++
