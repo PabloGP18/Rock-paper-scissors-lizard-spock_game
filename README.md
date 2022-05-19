@@ -1,7 +1,7 @@
 # Rock-paper-scissors-lizard-spock_game
 
 ### Thinking part
-
+I'm thinking about how to create the game with an array, user input and if statements.
 ### How did I do it
 
 ### The rules 
