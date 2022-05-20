@@ -1,3 +1,4 @@
+
 *{
     font-family: sans-serif;
     font-style: italic;
@@ -36,7 +37,8 @@ Button{
     width: 10%;
     padding: 10px;
     border-radius: 15px;
-    text-transform: capitalize;
+    overflow: hidden;
+    cursor: pointer;
 }
 .playAgain{
     padding: 20px;
@@ -44,11 +46,12 @@ Button{
     text-transform: capitalize;
     margin-bottom: 20px;
 }
-button{
-    cursor: pointer;
+
+.option:focus{
+    background-color: black;
 }
 .optionButtons{
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -58,6 +61,33 @@ button{
     padding-bottom: 40px;
 }
 button.option{
-margin-right: 20px}
-
+margin-right: 20px
+}
+@media all and (min-width: 320px) and (max-width: 692px){
+    *{
+        font-size: 15px;
+        justify-content: center;
+        align-items: center;
+    }
+    .optionButtons{
+        display: flex;
+        flex-direction: column;
+    }
+    .option{
+        width: 30%;
+        margin-top: 10px;
+    }
+    #reset{
+        width: 30%;
+    }
+    .resetButton{
+        padding-right: 28px;
+    }
+    .move{
+        margin-right: -10px;
+    }
+    .result{
+        margin-right: -9px;
+    }
+}
 
