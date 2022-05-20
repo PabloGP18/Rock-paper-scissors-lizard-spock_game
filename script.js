@@ -13,10 +13,12 @@ option.forEach((option) => {
     // random choosing one of the options in the array
     const aiInput = aiOptions[Math.floor(Math.random()*5)];
     // Calling functions in eventlistener
+
         comparingInput(playerInput,aiInput);
         leftToPlay(movesLeft);
         displayPick(playerInput,aiInput);
         checkWinner(countPlayer,countComputer,movesLeft)
+        displayNone()
     });
 
 });
@@ -30,8 +32,6 @@ function restart(){
     document.getElementById("cCount").innerText= countComputer;
     document.getElementById("mvleft").innerText= "Moves left: " + movesLeft;
     document.getElementById("showResult").innerText= " ";
-    document.getElementById("playerPick").textContent= " ";
-    document.getElementById("computerPick").textContent= " ";
     console.log(countComputer, countPlayer)
 }
 
@@ -54,10 +54,6 @@ function comparingInput(playerInput, aiInput) {
 
     //if statement for a tie
     if (playerInput === aiInput) {
-        countPlayer++
-        countComputer++
-        document.getElementById("pCount").innerText = countPlayer;
-        document.getElementById("cCount").innerText = countComputer;
         document.getElementById("showResult").innerText = "Tie"
     }
     // checking rock
@@ -140,3 +136,12 @@ function checkWinner(countPlayer,countComputer,movesLeft){
         document.getElementById("showResult").innerText = "Computer wins game!";
         }
     }
+function displayNone(){
+    if(movesLeft > 0){
+        document.getElementById("playerPick").style.display = "block";
+        document.getElementById("computerPick").style.display= "block";
+    }else{
+        document.getElementById("playerPick").style.display = "none";
+        document.getElementById("computerPick").style.display= "none";
+    }
+}
